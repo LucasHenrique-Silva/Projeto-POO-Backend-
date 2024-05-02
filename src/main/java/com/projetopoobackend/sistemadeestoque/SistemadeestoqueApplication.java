@@ -8,7 +8,7 @@ public class SistemadeestoqueApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SistemadeestoqueApplication.class, args);
-		System.out.println("oi");
-	}
+		System.out.println("Servidor iniciado na porta: " + 8080);
 
+	}
 }
