@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 import com.projetopoobackend.sistemadeestoque.domain.Product;
+import com.projetopoobackend.sistemadeestoque.dto.ProductDto;
 import com.projetopoobackend.sistemadeestoque.repository.ProductRepository;
 import com.projetopoobackend.sistemadeestoque.services.exception.ObjectNotFoundException;
 
@@ -25,4 +26,12 @@ public class ProductService {
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
     }
 
+    public Product insert(Product obj) {
+        return repo.insert(obj);
+    }
+
+    public Product fromDto(ProductDto objDto) {
+        return new Product(objDto.getId(), objDto.getName(), objDto.getQuantity(), objDto.getType(),
+                objDto.getBuyPrice(), objDto.getSellPrice(), objDto.getWhereStored());
+    }
 }
