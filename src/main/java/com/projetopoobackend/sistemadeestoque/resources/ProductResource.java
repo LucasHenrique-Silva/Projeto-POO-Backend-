@@ -30,47 +30,7 @@ public class ProductResource {
 	
     @Autowired
     private ProductService service;
-    /*
-    @GetMapping
-    public ResponseEntity<List<ProductDto>> findAll() {
-        List<Product> list = service.findAll();
-        List<ProductDto> listDto = list.stream().map(x -> new ProductDto(x)).collect(Collectors.toList());
-        return ResponseEntity.ok().body(listDto);
-    }
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<ProductDto> findById(@PathVariable String id) {
-        Product obj = service.findById(id);
-        return ResponseEntity.ok().body(new ProductDto(obj));
-    }
-
-    @PostMapping
-    public ResponseEntity<Void> insert(@RequestBody ProductDto objDto) {
-        Product obj = service.fromDto(objDto);
-        obj = service.insert(obj);
-
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
-
-        return ResponseEntity.created(uri).build();
-    }
-
-    @DeleteMapping(value = "/{id}")
-    public ResponseEntity<Void> delete(@PathVariable String id) {
-        service.delete(id);
-        return ResponseEntity.noContent().build();
-    }
-
-    @PutMapping(value = "/{id}")
-    public ResponseEntity<ProductDto> update(@RequestBody ProductDto objDto, @PathVariable String id) {
-        Product obj = service.fromDto(objDto);
-        obj.setId(id);
-        obj = service.update(obj);
-
-        return ResponseEntity.noContent().build();
-    }
-    
-    
-    */
     //Rotas BackEnd
     
     @PostMapping(value = "/insertproducts")
