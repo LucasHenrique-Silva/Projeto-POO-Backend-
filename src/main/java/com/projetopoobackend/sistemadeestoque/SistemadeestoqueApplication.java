@@ -1,14 +1,20 @@
 package com.projetopoobackend.sistemadeestoque;
 
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class SistemadeestoqueApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SistemadeestoqueApplication.class, args);
-		System.out.println("Servidor iniciado na porta: " + 8080);
+		ConfigurableApplicationContext context = SpringApplication.run(SistemadeestoqueApplication.class, args);
+
+        Integer port = context.getEnvironment().getProperty("server.port", Integer.class);
+
+		
+		System.out.println("Servidor iniciado na porta: " + port);
 
 	}
 }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product List</title>
+     <title>Product List</title>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <title>Sistema de Gerenciamento de Alunos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <script src="https://kit.fontawesome.com/006642858d.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+    <form method="post" action="/editProduct" th:object="${product}">
+        <input type="hidden" th:field="*{id}">
+        
+
+        <!-- Nome do Produto -->
+        <div class="row">
+            <div class="col-md-6 form-group offset-md-3">
+                <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('name')}">
+                    <label class="validation-message" th:errors="*{name}"></label>
+                </div>
+                <label>Nome do Produto:</label>
+                <input class="form-control" placeholder="Ex: Camiseta XYZ" th:field="*{name}">
+            </div>
+        </div>
+
+        <!-- Quantidade -->
+        <div class="row">
+            <div class="col-md-6 form-group offset-md-3">
+                <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('quantity')}">
+                    <label class="validation-message" th:errors="*{quantity}"></label>
+                </div>
+                <label>Quantidade:</label>
+                <input type="number" class="form-control" placeholder="Quantidade" th:field="*{quantity}">
+            </div>
+        </div>
+
+        <!-- Tipo -->
+        <div class="row">
+            <div class="col-md-6 form-group offset-md-3">
+                <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('type')}">
+                    <label class="validation-message" th:errors="*{type}"></label>
+                </div>
+                <label>Tipo (opcional):</label>
+                <input class="form-control" placeholder="Ex: Camiseta" th:field="*{type}">
+            </div>
+        </div>
+
+        <!-- Preço de Compra -->
+        <div class="row">
+            <div class="col-md-6 form-group offset-md-3">
+                <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('buyPrice')}">
+                    <label class="validation-message" th:errors="*{buyPrice}"></label>
+                </div>
+                <label>Preço de Compra:</label>
+                <input type="number" step="0.01" class="form-control" placeholder="Preço de Compra" th:field="*{buyPrice}">
+            </div>
+        </div>
+
+        <!-- Preço de Venda -->
+        <div class="row">
+            <div class="col-md-6 form-group offset-md-3">
+                <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('sellPrice')}">
+                    <label class="validation-message" th:errors="*{sellPrice}"></label>
+                </div>
+                <label>Preço de Venda:</label>
+                <input type="number" step="0.01" class="form-control" placeholder="Preço de Venda" th:field="*{sellPrice}">
+            </div>
+        </div>
+
+        <!-- Onde Armazenado -->
+        <div class="row">
+            <div class="col-md-6 form-group offset-md-3">
+                <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('whereStored')}">
+                    <label class="validation-message" th:errors="*{whereStored}"></label>
+                </div>
+                <label>Onde Armazenado (opcional):</label>
+                <input class="form-control" placeholder="Local de Armazenamento" th:field="*{whereStored}">
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 d-md-block">
+            <button type="submit" class="btn btn-outline-success">Salvar</button>
+            <a th:href="@{/products}" class="btn btn-outline-danger">Voltar</a>
+        </div>
+    </form>
+</body>
+</html>
