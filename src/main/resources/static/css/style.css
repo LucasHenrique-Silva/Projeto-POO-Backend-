@@ -15,6 +15,8 @@ a.btn-nav:hover{color: #597477 !important;}
     padding: 40px;
     position: relative;
 }
+
+
 .wm{width: 50%; float: left;}
 .clear{clear: both;}
 .center{text-align: center}
@@ -25,11 +27,11 @@ a.btn-nav:hover{color: #597477 !important;}
     z-index: 105;
 }
 .texto-centro{color: #ffffff; font-size: 3em; font-family: 'Ubuntu'; font-weight: bold;}
-.btn-index{width: 280px; color: #fdfdfd; border-radius: 10px; border: 3px solid #7fdce8; padding: 20px;}
+
 .botoes{padding: 2% 15%;}
-.btn-index:hover{color: #eeeeee; background-color: rgb(127, 220, 232);}
+
 .rodape{color: #ffffff; background-color: #7fdce8; text-align: center; font-size: 0.80em;}
-.wm a{text-decoration: none;}
+
 .d-grid{font-weight: bold; padding-top: 20px; text-align: center}
 
 @media screen and (max-width: 667px) {
