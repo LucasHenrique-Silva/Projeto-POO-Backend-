@@ -68,7 +68,7 @@ public class ProductResource {
     @GetMapping("/products")
     public ModelAndView producs(Product product) {
         ModelAndView model = new ModelAndView();
-        model.setViewName("/products/products");
+        model.setViewName("products/products");
         model.addObject("products", service.findAll());
         return model;
     }
