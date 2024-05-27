@@ -76,7 +76,7 @@ public class ProductResource {
     @GetMapping("/inserirproduto")
     public ModelAndView insertAlunos(Product product) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("/products/formProduct");
+        modelAndView.setViewName("products/formProduct");
         modelAndView.addObject("product", new Product());
         return modelAndView;
     }
@@ -84,7 +84,7 @@ public class ProductResource {
     @GetMapping("/index")
     public ModelAndView index() {
         ModelAndView model = new ModelAndView();
-        model.setViewName("/products/index");
+        model.setViewName("products/index");
         return model;
     }
     
@@ -94,7 +94,7 @@ public class ProductResource {
         Product produto = service.findById(id); // Substitui findById por buscarPorId (mais descritivo)
        
         model.addObject("product", produto);
-        model.setViewName("/products/editProduct");
+        model.setViewName("products/editProduct");
         return model;
     }
 
