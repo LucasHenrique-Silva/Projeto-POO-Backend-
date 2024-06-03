@@ -105,6 +105,13 @@ public class ProductResource {
         model.setViewName("products/index");
         return model;
     }
+    
+    @GetMapping("/")
+    public ModelAndView home() {
+        ModelAndView model = new ModelAndView();
+        model.setViewName("products/index");
+        return model;
+    }
        
     
 
