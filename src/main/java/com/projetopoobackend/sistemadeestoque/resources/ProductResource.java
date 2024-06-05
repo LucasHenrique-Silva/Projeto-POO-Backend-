@@ -1,6 +1,8 @@
 package com.projetopoobackend.sistemadeestoque.resources;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.projetopoobackend.sistemadeestoque.domain.Product;
+import com.projetopoobackend.sistemadeestoque.domain.User;
 import com.projetopoobackend.sistemadeestoque.dto.ProductDto;
 import com.projetopoobackend.sistemadeestoque.repository.ProductRepository;
 import com.projetopoobackend.sistemadeestoque.services.ProductService;
@@ -99,20 +102,13 @@ public class ProductResource {
         return model;
     }
    
-    @RequestMapping("/{path:[^\\.]+}/**")
-    public ModelAndView forward() {
-        ModelAndView model = new ModelAndView();
-        model.setViewName("products/index");
-        return model;
-    }
+   
     
-    @GetMapping("/")
-    public ModelAndView home() {
-        ModelAndView model = new ModelAndView();
-        model.setViewName("products/index");
-        return model;
-    }
+    
        
+    
+    
+   
     
 
 }
