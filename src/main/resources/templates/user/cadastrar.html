@@ -93,7 +93,7 @@
             <p>Preencha o formulário abaixo para criar uma nova conta.</p>
           </div>
 
-          <form method="post" action="cadastro" th:object="${user}">
+          <form method="post" action="/insertuser" th:object="${user}">
 
             <div class="form-group">
               <input type="text" th:field="*{name}" class="form-control" placeholder="Nome">

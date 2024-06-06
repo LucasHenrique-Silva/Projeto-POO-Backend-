@@ -26,13 +26,15 @@ public class UserResources {
 	private UserService service;
 	
 	 @PostMapping(value = "/insertuser")
-	    public ResponseEntity<User> insert(@RequestBody UserDto objDto) {
+	    public ModelAndView insert( UserDto objDto) {
 	        User obj = service.fromDto(objDto);
 	        obj =  service.insert(obj);
 	        
 	        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 	        
-	        return ResponseEntity.created(uri).body(obj);
+	        ModelAndView mav = new ModelAndView("redirect:/login");
+	        return mav;
+	        
 	    }
 	    
 	    @GetMapping(value = "removeuser/{id}")
