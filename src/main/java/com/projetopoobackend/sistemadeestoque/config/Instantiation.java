@@ -5,7 +5,6 @@ import org.springframework.boot.CommandLineRunner;
 
 import org.springframework.context.annotation.Configuration;
 
-import com.projetopoobackend.sistemadeestoque.domain.Product;
 import com.projetopoobackend.sistemadeestoque.repository.ProductRepository;
 
 @Configuration
@@ -17,9 +16,6 @@ public class Instantiation implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-      
-
     }
-    
 
 }
