@@ -24,7 +24,7 @@
 
         <div id="navMobile" class="navbar-collapse collapse justify-content-end">
             <a th:href="@{/index}" class="btn-nav nav-item nav-link"><i class="bi bi-house-door"></i> Home</a>
-            <a class="btn-nav nav-item nav-link" th:href="@{/inserirproduto}"><i class="bi bi-person-plus"></i> Cadastrar Produto</a>
+            <a class="btn-nav nav-item nav-link" th:href="@{/addProduct}"><i class="bi bi-person-plus"></i> Cadastrar Produto</a>
             <a class="btn-nav nav-item nav-link" th:href="@{/products}"><i class="bi bi-search"></i> Listar Produto</a>
             <form action="/logout" method="post" onsubmit="deleteJSessionIdCookie()">
                 <button type="submit" class="btn-nav-sair nav-item nav-link btn-danger"><i class="bi bi-box-arrow-right"></i> Sair</button>
