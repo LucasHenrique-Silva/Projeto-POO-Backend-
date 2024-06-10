@@ -5,8 +5,8 @@ public enum ProductType {
     HIGIENE("Higiene"),
     BEBIDAS("Bebidas"),
     LIMPEZA("Limpeza"),
-    MATERIAL_ESCOLAR("Material escolar");
-
+    MATERIAL_ESCOLAR("Material escolar"),
+	ROUPAS("Roupas");
     @SuppressWarnings("unused")
     private String productType;
 
