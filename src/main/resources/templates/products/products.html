@@ -150,26 +150,26 @@
 <body>
   <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
   <div class="mt-5 containera">
-    <h1>Product List</h1>
+    <h1>Listagem de Produtos</h1>
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Type</th>
-          <th scope="col">Buy Price</th>
-          <th scope="col">Sell Price</th>
-          <th scope="col">Where Stored</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Quantidade</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Preço de Compra</th>
+          <th scope="col">Preço de Venda</th>
+          <th scope="col">Local de Armazenamento</th>
         </tr>
       </thead>
       <tbody>
         <tr scope="row" th:each="product : ${products}">
-          <td th:text="${product.name}">Name</td>
-          <td th:text="${product.quantity}">Quantity</td>
-          <td th:text="${product.type}">Type</td>
-          <td th:text="${product.buyPrice}">Buy Price</td>
-          <td th:text="${product.sellPrice}">Sell Price</td>
-          <td th:text="${product.whereStored}">Where Stored</td>
+          <td th:text="${product.name}">Nome</td>
+          <td th:text="${product.quantity}">Quantidade</td>
+          <td th:text="${product.type}">Tipo</td>
+          <td th:text="${product.buyPrice}">Preço de Compra</td>
+          <td th:text="${product.sellPrice}">Preço de Venda</td>
+          <td th:text="${product.whereStored}">Local de Armazenamento</td>
           <td class="btn-container">
             <a class="btn btn-edit" th:href="@{editProduct/{id}(id=${product.id})}">
               <i class="bi bi-pencil-square"></i> Editar</a>
@@ -184,4 +184,5 @@
   <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
   <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 
+</body>
 </html>
