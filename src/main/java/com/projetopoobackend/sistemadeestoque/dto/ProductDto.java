@@ -3,6 +3,7 @@ package com.projetopoobackend.sistemadeestoque.dto;
 import java.io.Serializable;
 
 import com.projetopoobackend.sistemadeestoque.domain.Product;
+import com.projetopoobackend.sistemadeestoque.enums.ProductType;
 
 public class ProductDto implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -10,7 +11,7 @@ public class ProductDto implements Serializable {
     private String id;
     private String name;
     private Integer quantity;
-    private String type;
+    private ProductType type;
     private Double buyPrice;
     private Double sellPrice;
     private String whereStored;
@@ -52,11 +53,11 @@ public class ProductDto implements Serializable {
         this.quantity = quantity;
     }
 
-    public String getType() {
+    public ProductType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(ProductType type) {
         this.type = type;
     }
 

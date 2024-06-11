@@ -5,6 +5,8 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.projetopoobackend.sistemadeestoque.enums.ProductType;
+
 @Document(collection = "product")
 public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -13,7 +15,7 @@ public class Product implements Serializable {
     private String id;
     private String name;
     private Integer quantity;
-    private String type;
+    private ProductType type;
     private Double buyPrice;
     private Double sellPrice;
     private String whereStored;
@@ -21,7 +23,8 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(String id, String name, Integer quantity, String type, Double buyPrice, Double sellPrice,
+    public Product(String id, String name, Integer quantity,
+            ProductType type, Double buyPrice, Double sellPrice,
             String whereStored) {
         this.id = id;
         this.name = name;
@@ -56,11 +59,11 @@ public class Product implements Serializable {
         this.quantity = quantity;
     }
 
-    public String getType() {
+    public ProductType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(ProductType type) {
         this.type = type;
     }
 
